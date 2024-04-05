@@ -1,0 +1,179 @@
+/* Global Styles */
+*{
+  z-index: 1;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+main {
+  margin: 20px;
+}
+
+#profile {
+  margin-bottom: 20px;
+}
+
+#profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+#feed .post {
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#feed .post img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+p{
+  font-weight: 500;
+}
+
+.btn{
+  width: 250px;
+  height: 70px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 14px;
+  box-shadow: 1px 8px;
+  transition: 0.3s all;
+  background-color: #ddd;
+  &:hover{
+    background-color: #fff;
+  }
+  &:active{
+    box-shadow: 0px 0px;
+    transform: translateY(8px);
+  }
+}
+
+.todo{
+  display: block;
+  z-index: 10;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: #000, $alpha: 0.3);
+  &_wrapper{
+    position: absolute;
+    width: 600px;
+    min-height: 800px;
+    background-color:#fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid 2px #000;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  &_header{
+    height: 60px;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 36px;
+    background-color: #4884ac;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0px 0px 1px 1px #333;
+  }
+  &_textinput{
+    margin: 10px 15px 0 15px;
+    font-size: 20px;
+    height: 40px;
+    width: calc(100% - 50px);
+    display: block;
+    padding-left: 15px;
+    border-radius: 6px;
+    
+  }
+  &_form{
+    position: relative;
+    margin-top: 15px;
+    display: grid;
+    grid-auto-rows: auto;
+    row-gap: 10px;
+    min-height: 50px;
+    padding: 5px 15px;
+    
+    &_label{
+      display: flex;
+      align-items: center;
+      span{
+        width: 100%;
+        padding-left: 15px;
+        display: block;
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+      span.crossedout{
+         color: #888; 
+         text-decoration: line-through;
+      }
+      &::after{
+        content:'';
+        position: absolute;
+        display:block;
+        width: calc(100% - 30px);
+        transform: translateY(21px);
+        height:1px;
+        border-bottom:1px solid #ccc;
+      }
+    }
+    &_checkbox{
+      width: 30px;
+      height: 30px;
+      
+      &:focus{
+        background: none;
+      }
+      &:checked{
+        color: pink;
+        background-color: green;
+      }
+    }
+  }
+}
