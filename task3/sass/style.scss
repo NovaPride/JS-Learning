@@ -60,9 +60,8 @@ main {
 }
 
 footer {
-  position: fixed;
+  position: block;
   bottom: 0;
-  width: 100%;
   background-color: #333;
   color: #fff;
   padding: 10px;
@@ -92,16 +91,19 @@ p{
 }
 
 .todo{
-  display: block;
+  display: none;
   z-index: 10;
   position: fixed;
   width: 100vw;
   height: 100vh;
   background-color: rgba($color: #000, $alpha: 0.3);
+  &_active{
+    display: block;
+  }
   &_wrapper{
     position: absolute;
     width: 600px;
-    min-height: 800px;
+    max-height: 80vh;
     background-color:#fff;
     top: 50%;
     left: 50%;
@@ -111,6 +113,7 @@ p{
     overflow: hidden;
   }
   &_header{
+    position: relative;
     height: 60px;
     text-align: center;
     padding-top: 15px;
@@ -119,6 +122,23 @@ p{
     color: #fff;
     font-weight: bold;
     box-shadow: 0px 0px 1px 1px #333;
+    &_btn{
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      width: 45px;
+      height: 45px;
+      background-color:#184f74;
+      border-radius: 4px;
+      cursor: pointer;
+      user-select: none;
+      transition: 0.2s all;
+      color: rgb(220, 220, 220);
+      &:hover{
+        color:#fff;
+        background-color:#103f5f;
+      }
+    }
   }
   &_textinput{
     margin: 10px 15px 0 15px;
@@ -138,7 +158,6 @@ p{
     row-gap: 10px;
     min-height: 50px;
     padding: 5px 15px;
-    
     &_label{
       display: flex;
       align-items: center;
@@ -170,9 +189,33 @@ p{
       &:focus{
         background: none;
       }
-      &:checked{
-        color: pink;
-        background-color: green;
+    }
+    &_edit{
+      display: block;
+      width: 30px;
+      height: 30px;
+      opacity: 0.1;
+      background-image: url("https://icons.iconarchive.com/icons/designcontest/outline/48/Pencil-icon.png");
+      background-size: 28px;
+      background-repeat: no-repeat;
+      border: none;
+      &:hover{
+        opacity: 1;
+        
+      }
+    }
+    &_delete{
+      display: block;
+      width: 30px;
+      height: 30px;
+      opacity: 0.1;
+      background-image: url("https://icons.iconarchive.com/icons/graphicloads/100-flat/48/recyclebin-icon.png");
+      background-size: 28px;
+      background-repeat: no-repeat;
+      border: none;
+      &:hover{
+        opacity: 1;
+        
       }
     }
   }
