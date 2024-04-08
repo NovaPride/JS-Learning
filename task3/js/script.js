@@ -4,11 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const headerBtn = popUp.querySelector('.todo_header_btn');
   const textInput = popUp.querySelector('.todo_textinput');
 
-  //const labels = popUp.querySelectorAll('.todo_form_label');
-  //console.log(labels[labels.length]);
-  //const labels = [];
   const form = document.querySelector('.todo_form');
-  
 
   todoBtn.addEventListener('click', () => {
     popUp.classList.toggle('todo_active');
@@ -17,6 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
   headerBtn.addEventListener('click', () => {
     popUp.classList.toggle('todo_active');
   });
+
+  function createNewLabel(){
+
+  }
 
   textInput.addEventListener('keypress', e => {
     if (e.key === 'Enter') {
